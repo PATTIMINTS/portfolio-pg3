@@ -29,7 +29,9 @@ if (process.env.NODE_ENV === "production") {
 var MONGODB_URI =
   process.env.MONGODB_URI || "mongodb://localhost/portfoliomessages";
 
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true
+});
 
 // Database configuration
 var databaseUrl = "portfoliomessages";
