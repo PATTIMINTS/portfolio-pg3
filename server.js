@@ -18,7 +18,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
-
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 // mongoose
 //   .connect(process.env.MONGODB_URI || "mongodb://localhost/portfoliomessages")
 //   .then(() => console.log("portfoliomessages connected ^_^"))
