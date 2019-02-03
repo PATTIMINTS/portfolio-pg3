@@ -1,26 +1,26 @@
-function getResults() {
-  // Empty any results currently on the page
-  $("#results").empty();
-  // Grab all of the current notes
-  $.getJSON("/all", function(data) {
-    // For each note...
-    for (var i = 0; i < data.length; i++) {
-      // ...populate #results with a p-tag that includes the note's title and object id
-      $("#results").prepend(
-        "<p class='data-entry' data-id=" +
-          data[i]._id +
-          "><span class='dataTitle' data-id=" +
-          data[i]._id +
-          ">" +
-          data[i].title +
-          "</span><span class=delete>X</span></p>"
-      );
-    }
-  });
-}
+// function getResults() {
+//   // Empty any results currently on the page
+//   $("#results").empty();
+//   // Grab all of the current notes
+//   $.getJSON("/all", function(data) {
+//     // For each note...
+//     for (var i = 0; i < data.length; i++) {
+//       // ...populate #results with a p-tag that includes the note's title and object id
+//       $("#results").prepend(
+//         "<p class='data-entry' data-id=" +
+//           data[i]._id +
+//           "><span class='dataTitle' data-id=" +
+//           data[i]._id +
+//           ">" +
+//           data[i].title +
+//           "</span><span class=delete>X</span></p>"
+//       );
+//     }
+//   });
+// }
 
-// Runs the getResults function as soon as the script is executed
-getResults();
+// // Runs the getResults function as soon as the script is executed
+// getResults();
 
 // When the #make-new button is clicked
 $(document).on("click", "#btn", function() {
@@ -33,26 +33,25 @@ $(document).on("click", "#btn", function() {
     data: {
       name: $("#name").val(),
       email: $("#email").val(),
-      comment: $(".form-control").val(),
+      comment: $("#blue").val(),
       created: Date.now()
     }
   });
   //     // If that API call succeeds, add the title and a delete button for the note to the page
   //     .then(function(data) {
   //       // Add the title and delete button to the #results section
-  //       $("#results").prepend(
-  //         "<p class='data-entry' data-id=" +
-  //           data._id +
-  //           "><span class='dataTitle' data-id=" +
-  //           data._id +
-  //           ">" +
-  //           data.title +
-  //           "</span><span class=delete>X</span></p>"
-  //       );
-  //       // Clear the note and title inputs on the page
-  //       $("#note").val("");
-  //       $("#title").val("");
-  //     });
+  //   $("#results").prepend(
+  //     "<p class='data-entry' data-id=" +
+  //       data._id +
+  //       "><span class='dataTitle' data-id=" +
+  //       data._id +
+  //       ">" +
+  //       data.title +
+  //       "</span><span class=delete>X</span></p>"
+  //   );
+  //   // Clear the note and title inputs on the page
+  //   $("#note").val("");
+  //   $("#title").val("");
   // });
 
   // // When the #clear-all button is pressed
