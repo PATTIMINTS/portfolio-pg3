@@ -18,6 +18,16 @@ app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
 
+mongoose
+  .connect(process.env.MONGODB_URI || "mongodb://localhost/portfoliomessages")
+  .then(() => console.log("portfoliomessages connected ^_^"))
+  .catch(err => console.log(err));
+
+// var MONGODB_URI =
+//   process.env.MONGODB_URI || "mongodb://localhost/portfoliomessages";
+
+// mongoose.connect(MONGODB_URI);
+
 // Database configuration
 var databaseUrl = "portfoliomessages";
 var collections = ["messages"];
@@ -168,8 +178,7 @@ app.get("/all", function(req, res) {
 //     }
 //   });
 // });
+const port = process.env.PORT || 3000;
 
+app.listen(port, () => console.log(`Server started on port ${port}`));
 // Listen on port 3000
-app.listen(3000, function() {
-  console.log("App running on port 3000!");
-});
