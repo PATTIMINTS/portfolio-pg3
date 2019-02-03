@@ -2,6 +2,7 @@
 var express = require("express");
 var mongojs = require("mongojs");
 var logger = require("morgan");
+var mongoose = require("mongoose");
 
 var app = express();
 
@@ -18,15 +19,15 @@ app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
 
-mongoose
-  .connect(process.env.MONGODB_URI || "mongodb://localhost/portfoliomessages")
-  .then(() => console.log("portfoliomessages connected ^_^"))
-  .catch(err => console.log(err));
+// mongoose
+//   .connect(process.env.MONGODB_URI || "mongodb://localhost/portfoliomessages")
+//   .then(() => console.log("portfoliomessages connected ^_^"))
+//   .catch(err => console.log(err));
 
-// var MONGODB_URI =
-//   process.env.MONGODB_URI || "mongodb://localhost/portfoliomessages";
+var MONGODB_URI =
+  process.env.MONGODB_URI || "mongodb://localhost/portfoliomessages";
 
-// mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI);
 
 // Database configuration
 var databaseUrl = "portfoliomessages";
