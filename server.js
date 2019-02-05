@@ -35,7 +35,7 @@ mongoose.connect(MONGODB_URI, {
 
 // Database configuration
 var databaseUrl = "portfoliomessages";
-var collections = ["messages"];
+var collections = ["message"];
 
 // Hook mongojs config to db variable
 var db = mongojs(databaseUrl, collections);
@@ -59,7 +59,7 @@ app.get("/", function(req, res) {
 app.post("/submit", function(req, res) {
   console.log(req.body);
   // Insert the note into the message collection
-  db.messages.insert(req.body, function(error, saved) {
+  db.message.insert(req.body, function(error, saved) {
     // Log any errors
     if (error) {
       console.log(error);
@@ -74,7 +74,7 @@ app.post("/submit", function(req, res) {
 // Retrieve results from mongo
 app.get("/all", function(req, res) {
   // Find all messages in the message collection
-  db.messages.find({}, function(error, found) {
+  db.message.find({}, function(error, found) {
     // Log any errors
     if (error) {
       console.log(error);
