@@ -5,10 +5,10 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 
 const port = process.env.PORT || 3000;
-mongoose.Promise = Promise;
-var MONGODB_URI =
-  process.env.MONGODB_URI || "mongodb://localhost/portfoliomessages";
-mongoose.connect(MONGODB_URI);
+// mongoose.Promise = Promise;
+// var MONGODB_URI =
+//   process.env.MONGODB_URI || "mongodb://localhost/portfoliomessages";
+// mongoose.connect(MONGODB_URI);
 
 var app = express();
 
@@ -27,10 +27,10 @@ app.use(express.static("public"));
 // if (process.env.NODE_ENV === "production") {
 //   app.use(express.static("client/build"));
 // }
-// mongoose
-//   .connect(process.env.MONGODB_URI || "mongodb://localhost/portfoliomessages")
-//   .then(() => console.log("portfoliomessages connected ^_^"))
-//   .catch(err => console.log(err));
+mongoose
+  .connect(process.env.MONGODB_URI || "mongodb://localhost/portfoliomessages")
+  .then(() => console.log("portfoliomessages connected ^_^"))
+  .catch(err => console.log(err));
 
 // var MONGODB_URI =
 //   process.env.MONGODB_URI || "mongodb://localhost/portfoliomessages";
