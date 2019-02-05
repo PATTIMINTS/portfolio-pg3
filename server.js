@@ -4,6 +4,12 @@ var mongojs = require("mongojs");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
+const port = process.env.PORT || 3000;
+mongoose.Promise = Promise;
+var MONGODB_URI =
+  process.env.MONGODB_URI || "mongodb://localhost/portfoliomessages";
+mongoose.connect(MONGODB_URI);
+
 var app = express();
 
 // Set the app up with morgan.
@@ -18,20 +24,20 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("client/build"));
+// }
 // mongoose
 //   .connect(process.env.MONGODB_URI || "mongodb://localhost/portfoliomessages")
 //   .then(() => console.log("portfoliomessages connected ^_^"))
 //   .catch(err => console.log(err));
 
-var MONGODB_URI =
-  process.env.MONGODB_URI || "mongodb://localhost/portfoliomessages";
+// var MONGODB_URI =
+//   process.env.MONGODB_URI || "mongodb://localhost/portfoliomessages";
 
-mongoose.connect(MONGODB_URI, {
-  useNewUrlParser: true
-});
+// mongoose.connect(MONGODB_URI, {
+//   useNewUrlParser: true
+// });
 
 // Database configuration
 var databaseUrl = "portfoliomessages";
@@ -47,9 +53,9 @@ db.on("error", function(error) {
 
 // Routes
 // ======
-// mongoose.connect("mongodb://localhost/portfoliomessages", {
-//   useNewUrlParser: true
-// });
+mongoose.connect("mongodb://localhost/portfoliomessages", {
+  useNewUrlParser: true
+});
 // Simple index route
 app.get("/", function(req, res) {
   res.send(index.html);
@@ -184,8 +190,8 @@ app.get("/all", function(req, res) {
 //       res.send(response);
 //     }
 //   });
-// });
-const port = process.env.PORT || 3000;
+// // });
+// const port = process.env.PORT || 3000;
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
 // Listen on port 3000
