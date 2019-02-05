@@ -34,7 +34,7 @@ app.use(express.static("public"));
 //   .catch(err => console.log(err));
 
 var MONGODB_URI =
-  process.env.MONGODB_URI || "mongodb://localhost/portfoliomessages";
+  process.env.MONGODB_URI || "mongodb://localhost:27017/portfoliomessages";
 
 mongoose
   .connect(MONGODB_URI, {
@@ -57,7 +57,7 @@ db.on("error", function(error) {
 
 // Routes
 // ======
-mongoose.connect("mongodb://localhost/portfoliomessages", {
+mongoose.connect("mongodb://localhost:27017/portfoliomessages", {
   useNewUrlParser: true
 });
 // Simple index route
