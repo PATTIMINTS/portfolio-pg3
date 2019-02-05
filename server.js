@@ -47,9 +47,9 @@ db.on("error", function(error) {
 
 // Routes
 // ======
-mongoose.connect("mongodb://localhost/portfoliomessages", {
-  useNewUrlParser: true
-});
+// mongoose.connect("mongodb://localhost/portfoliomessages", {
+//   useNewUrlParser: true
+// });
 // Simple index route
 app.get("/", function(req, res) {
   res.send(index.html);
