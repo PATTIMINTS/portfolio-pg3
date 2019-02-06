@@ -33,8 +33,9 @@ app.use(express.static("public"));
 //   .then(() => console.log("portfoliomessages connected ^_^"))
 //   .catch(err => console.log(err));
 
-var MONGODB_URI =
-  process.env.MONGODB_URI || "mongodb://localhost:27017/portfoliomessages";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://heroku_7df7drh5";
+
+// "mongodb://localhost:27017/portfoliomessages";
 
 mongoose
   .connect(MONGODB_URI, {
