@@ -1,43 +1,25 @@
 $(function() {
-  $("#image-One").hover(function() {
-    $(this)
-      .find("#one")
-      .toggle(200);
+  $("#image-One").click(function() {
+    $("#theDiv-1").toggle("slow");
   });
-});
-$(function() {
-  $("#image-two").hover(function() {
-    $(this)
-      .find("#last")
-      .toggle(200);
-  });
-});
-$(function() {
-  $("#image-Three").hover(function() {
-    $(this)
-      .find("#three")
-      .toggle(200);
-  });
-});
-$(function() {
-  $("#image-Four").hover(function() {
-    $(this)
-      .find("#four")
-      .toggle(200);
-  });
-});
-$(function() {
-  $("#image-Five").hover(function() {
-    $(this)
-      .find("#five")
-      .toggle(200);
-  });
-});
 
-$(function() {
-  $("#image-Six").hover(function() {
-    $(this)
-      .find("#final")
-      .toggle(200);
+  $("#image-two").click(function() {
+    $("#theDiv-2").toggle("slow");
+  });
+
+  $("#image-Three").click(function() {
+    $("#theDiv-3").toggle("slow");
+  });
+
+  $("#image-Four").click(function() {
+    $("#theDiv-4").toggle("slow");
+  });
+
+  $("#image-Five").click(function() {
+    $("#theDiv-5").toggle("slow");
+  });
+
+  $("#image-Six").click(function() {
+    $("#theDiv-6").toggle("slow");
   });
 });

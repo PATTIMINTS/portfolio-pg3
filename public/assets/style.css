@@ -130,6 +130,12 @@ h2 {
   }
 }
 
+.card {
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+.card:hover {
+  cursor: pointer;
+}
 #form {
   margin-top: 200px;
   width: 500px;
