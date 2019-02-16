@@ -17,12 +17,21 @@ nav {
 a.nav-link {
   color: rgb(100, 98, 98);
 }
-
+.card-deck img {
+  height: 350px;
+  width: 350px;
+  padding: 25px;
+}
+#first {
+  height: 600px;
+  width: 530px;
+}
 .bailey {
   float: right;
   height: 200px;
   width: 200px;
   margin-left: 200px;
+  box-shadow: 10px 10px 5px #aaaaaa;
 }
 .display-4 {
   font-family: "Monoton", cursive;
@@ -133,7 +142,8 @@ h2 {
 .card {
   box-shadow: 10px 10px 5px #aaaaaa;
 }
-.card:hover {
+
+.two:hover {
   cursor: pointer;
 }
 #form {
