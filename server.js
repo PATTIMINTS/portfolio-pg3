@@ -32,17 +32,19 @@ app.use(express.static("public"));
 
 //   .then(() => console.log("portfoliomessages connected ^_^"))
 //   .catch(err => console.log(err));
+var db = process.env.MONGODB_URI || "mongodb://Localhost/portfoliomessages";
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://heroku_7df7drh5";
+// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://heroku_7df7drh5";
 
 // "mongodb://localhost:27017/portfoliomessages";
 
-mongoose
-  .connect(MONGODB_URI, {
-    useNewUrlParser: true
-  })
-  .then(() => console.log("portfoliomessages connected ^_^"))
-  .catch(err => console.log(err));
+mongoose.connect(db, function(error) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("mongoose connection is successful");
+  }
+});
 
 // Database configuration
 var databaseUrl = "portfoliomessages";
