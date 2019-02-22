@@ -22,4 +22,16 @@ $(function() {
   $("#image-Six").click(function() {
     $("#theDiv-6").toggle("slow");
   });
+
+  $("#image-Seven").click(function() {
+    $("#theDiv-7").toggle("slow");
+  });
+
+  $("#image-Eight").click(function() {
+    $("#theDiv-8").toggle("slow");
+  });
+
+  $("#image-Nine").click(function() {
+    $("#theDiv-9").toggle("slow");
+  });
 });
